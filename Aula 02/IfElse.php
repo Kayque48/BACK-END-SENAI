@@ -4,10 +4,10 @@
 
 echo "Resultado da Prova\n";
 
-$nome = "Enzo Enrico";
-$nota1 = 0;
-$nota2 = 0;
-$presenca = 0;
+$nome = readline("Digite o nome do aluno: ");
+$nota1 = readline("\nDigite a primeira nota: ");
+$nota2 = readline("\nDigite a segunda nota: ");
+$presenca = readline("\nDigite a procentagem da frequência do aluno: ");
 
 $media = ($nota1 + $nota2) / 2;
 
