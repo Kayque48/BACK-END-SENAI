@@ -23,8 +23,4 @@
     function ganhos() {
         $clintes = readline;
     }
-
-    
-
-
 ?>

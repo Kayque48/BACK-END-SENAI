@@ -1,5 +1,4 @@
 <?php
-
 // 📌 Exercício 1 – Função para exibir dados do carro
 function exibirCarros($carros) {
     echo "Seção Para Exibir Todos os Carros\n\n";
