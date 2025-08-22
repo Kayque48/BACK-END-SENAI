@@ -23,6 +23,10 @@ class Carros{
         echo "Números de Donos: " . $this->N_Donos . "\n\n";
     }
 
+    public function ligar(): void{
+        echo "O carro {$this->modelo} está ligado!\n";
+    }
+
 }
 
 $carro1 = new Carros("Porsche", "911", "2020", false, 3);
@@ -44,4 +48,4 @@ $carro3->mostrar();
 $carro4->mostrar();
 $carro5->mostrar();
 $carro6->mostrar();
-?>
+?>z]

@@ -3,7 +3,7 @@
 // Crie uma classe (molde de objeto) chamada 'Cachorro' com os seguintes atributos: Nome, Idade, raca, castrado e sexo.
 
 
-echo "\n\nExercício 1 e 2\n\n";
+echo "\n\nExercício 1, 2, 5 e 6\n\n";
 
 class Cachorro {
     public $nome;
@@ -21,7 +21,15 @@ class Cachorro {
     }
 
     public function mostrarCachorro(): void {
-        echo "Nome: {$this->nome} \nIdade: {$this->idade} \nRaça: {$this->raca}" . "\nCastrado: " . ($this->castrado ? 'Sim' : 'Não') . "\nSexo: {$this->sexo}\n\n";
+        echo "Nome: {$this->nome} \nIdade: {$this->idade} \nRaça: {$this->raca}" . "\nCastrado: " . ($this->castrado ? 'Sim' : 'Não') . "\nSexo: {$this->sexo}";
+    }
+
+    public function latir(): void {
+        echo "\nO Cachorro {$this->nome} está latindo";
+    }
+
+    public function marcarTerritorio(): void {
+        echo "\nO Cachorro {$this->nome} da raça {$this->raca} está marcando território\n\n";
     }
 
 }
@@ -44,16 +52,18 @@ $cachorros = [
 
 foreach($cachorros as $cachorro){
     $cachorro->mostrarCachorro();
+    $cachorro->latir();
+    $cachorro->marcarTerritorio();
 }
 
 echo "\n\n ------------------------------------\n\n";
 
-echo "\n\nExercício 3 e 4\n\n";
+echo "\n\nExercício 3, 4, 7 e 8\n\n";
 
 // Exercício 3:
 //     Após a conclusão dos exercícios 1 e 2, crie uma classe chamada 'Usuario' com os
 //  atributos: Nome, CPF, Sexo, Email, Estado civil, Cidade, Estado, Endereco e CEP.
-class Usuario{
+class Usuario {
     public $nome;
     public $cpf;
     public $sexo;
@@ -77,51 +87,38 @@ class Usuario{
     }
 
     public function mostrarUsuarios() {
-        echo "Nome: {$this->nome} \nCPF: {$this->cpf} \nSexo: {$this->sexo}\nEmail: {$this->email} \nEstado Civil: {$this->estadoCivil} \nCidade: {$this->cidade} \nEstado: {$this->estado} \nEndereço: {$this->endereco} \nCEP: {$this->cep}\n\n";
+        // Se existir o atributo anoCasado mostra, senão mostra "N/A"
+        $anosCasados = $this->anoCasado ?? "N/A";
+
+        echo "Nome: {$this->nome} \nCPF: {$this->cpf} \nSexo: {$this->sexo} \nEmail: {$this->email} \nEstado Civil: {$this->estadoCivil} \nAnos Casados: {$anosCasados} \nCidade: {$this->cidade} \nEstado: {$this->estado}  \nEndereço: {$this->endereco} \nCEP: {$this->cep}";
     }
 
-
+    public function casamento(): void {
+        if ($this->estadoCivil == "Casado") {
+            $anosCasados = $this->anoCasado ?? 0;
+            echo "\nParabéns pelo casamento de {$anosCasados} anos!\n\n";
+        } else {
+            echo "\nMuito buxa ksksksksksksk\n\n";
+        }
+    }
 }
 
 $usuarios = [
-    new Usuario(
-       "Josenildo Afonso Souza",
-        "100.200.300-40",
-        "Masculino",
-        "josenewdo.souza@gmail.com",
-        "Casado",
-        "Xique-Xique",
-        "Bahia",
-        "Rua da amizade, 99",
-        "40123-98"
-    ),
+    new Usuario("Josenildo Afonso Souza", "100.200.300-40", "Masculino", "josenewdo.souza@gmail.com", "Casado", "Xique-Xique", "Bahia", "Rua da amizade, 99", "40123-98"),
 
-    new Usuario(
-         "Valentina Passos Scherrer",
-        "070.070.060-70",
-        "Feminino",
-        "scherrer.valen@outlook.com",
-        "Divorciada",
-        "Iracemápolis",
-        "São Paulo",
-        "Avenida da saudade, 1942",
-        "23456-24"
-    ),
-    new Usuario(
-        "Claudio Braz Nepumoceno",
-        "575.575.242-32",
-        "Masculino",
-        "Clauclau.nepumoceno@gmail.com",
-        "Solteiro",
-        "Piripiri",
-        "Piauí",
-        "Estrada 3, 33",
-        "12345-99"
-    )
+    new Usuario("Valentina Passos Scherrer", "070.070.060-70", "Feminino", "scherrer.valen@outlook.com", "Divorciada", "Iracemápolis", "São Paulo", "Avenida da saudade, 1942", "23456-24"),
+    
+    new Usuario("Claudio Braz Nepumoceno", "575.575.242-32", "Masculino", "Clauclau.nepumoceno@gmail.com", "Solteiro", "Piripiri", "Piauí", "Estrada 3, 33", "12345-99")
 ];
 
-foreach($usuarios as $usario) {
-    $usario->mostrarUsuarios();
+$usuarios[0]->anoCasado = 90;
+$usuarios[1]->anoCasado = 0;
+$usuarios[2]->anoCasado = 0;
+
+foreach ($usuarios as $usuario) {
+    $usuario->mostrarUsuarios();
+    $usuario->casamento();
 }
+
 
 ?>

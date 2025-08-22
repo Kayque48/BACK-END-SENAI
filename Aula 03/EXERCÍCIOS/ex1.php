@@ -84,6 +84,7 @@ $carros = [
 ];
 
 
+
 foreach ($carros as $index => $carro) {
     $carros[$index]["preco"] = calcularValor($carro);
 }
