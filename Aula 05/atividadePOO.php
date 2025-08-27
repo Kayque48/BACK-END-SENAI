@@ -73,6 +73,7 @@ class Usuario {
     public $estado;
     public $endereco;
     public $cep;
+    public $anosCasados;
 
     public function __construct($nome, $cpf, $sexo, $email, $estadoCivil, $cidade, $estado, $endereco, $cep) {
         $this->nome = $nome;
@@ -87,20 +88,20 @@ class Usuario {
     }
 
     public function mostrarUsuarios() {
-        // Se existir o atributo anoCasado mostra, senão mostra "N/A"
-        $anosCasados = $this->anoCasado ?? "N/A";
+        $anosCasados = $this->anosCasados ?? "N/A";
 
         echo "Nome: {$this->nome} \nCPF: {$this->cpf} \nSexo: {$this->sexo} \nEmail: {$this->email} \nEstado Civil: {$this->estadoCivil} \nAnos Casados: {$anosCasados} \nCidade: {$this->cidade} \nEstado: {$this->estado}  \nEndereço: {$this->endereco} \nCEP: {$this->cep}";
     }
 
     public function casamento(): void {
         if ($this->estadoCivil == "Casado") {
-            $anosCasados = $this->anoCasado ?? 0;
+            $anosCasados = $this->anosCasados ?? 0;
             echo "\nParabéns pelo casamento de {$anosCasados} anos!\n\n";
         } else {
             echo "\nMuito buxa ksksksksksksk\n\n";
         }
     }
+
 }
 
 $usuarios = [
@@ -111,9 +112,9 @@ $usuarios = [
     new Usuario("Claudio Braz Nepumoceno", "575.575.242-32", "Masculino", "Clauclau.nepumoceno@gmail.com", "Solteiro", "Piripiri", "Piauí", "Estrada 3, 33", "12345-99")
 ];
 
-$usuarios[0]->anoCasado = 90;
-$usuarios[1]->anoCasado = 0;
-$usuarios[2]->anoCasado = 0;
+$usuarios[0]->anosCasados = 90;
+$usuarios[1]->anosCasados = 0;
+$usuarios[2]->anosCasados = 0;
 
 foreach ($usuarios as $usuario) {
     $usuario->mostrarUsuarios();

@@ -15,7 +15,7 @@ class Produtos{
     }
 
     public function mostrar() {
-        echo "ID: {$this->id} \nNome: {$this->nome} \nCategoria: {$this->categiria}" . "\nSexo: {$this->valor}";
+        echo "ID: {$this->id} \nNome: {$this->nome} \nCategoria: {$this->categoria}" . "\nSexo: {$this->valor}";
     }
 }
 
@@ -43,5 +43,5 @@ $produtos = [
 ];
 
 foreach ($produtos as $produto) {
-    $produtos->mostrar();
+    $produto->mostrar();
 }
