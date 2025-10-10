@@ -30,7 +30,7 @@ class Apartamento extends imovel {
     public function __construct($categoria, $n_comodos, $valor, $estado_conservacao, $tem_quintal, $andar) {
         parent::__construct($categoria, $n_comodos, $valor, $estado_conservacao);
 
-        $this->andar = $andar;
+        $this->andar    = $andar;
     }
 }
 

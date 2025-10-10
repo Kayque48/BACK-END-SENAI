@@ -1,6 +1,4 @@
 <?php
-
-
 interface Veiculos {
     public function mover();
 }
@@ -41,6 +39,4 @@ echo "\n";
 $barco->mover();
 echo "\n";
 $elevador->mover();
-
-
 ?>
