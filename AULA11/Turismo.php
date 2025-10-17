@@ -1,5 +1,7 @@
 <?php
 
+// relacionamente: Realizado e Herança
+
 interface  Terra {
     public function Comer();
     public function Nadar();

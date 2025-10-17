@@ -1,5 +1,7 @@
 <?php
 
+// Relacinamento: Herança e Realizamento
+
     interface Local{
         public function Dever();
     }
