@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
 
     <main>
-        <h1>Formluário cadastro de bebidas</h1>
+        <h1>Formulário cadastro de bebidas</h1>
         <form action="" method="POST">
             <input type="hidden" name="acao" value="criar">
             <label for="">Nome:</label>
