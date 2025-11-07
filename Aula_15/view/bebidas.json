@@ -1,9 +1,16 @@
 {
-    "Guaraná": {
-        "nome": "Guaraná",
-        "categoria": "agua",
-        "volume": 0.6,
-        "valor": 0,
-        "qtde": -31
+    "sim": {
+        "nome": "sim",
+        "categoria": "refrigerante",
+        "volume": 0.01,
+        "valor": -0.01,
+        "qtde": -1
+    },
+    "fad": {
+        "nome": "fad",
+        "categoria": "vinho",
+        "volume": 0.01,
+        "valor": -0.01,
+        "qtde": -1
     }
 }

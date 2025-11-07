@@ -24,5 +24,9 @@
         public function excluir($nome) {
             $this->dao->excluirBebida($nome);
         }
+
+        public function atualizar($nome, $novoNome, $novaCategoria, $novoVolume, $novoValor, $novaQtde) {
+            $this->dao->atualizarBebida($nome, $novoNome, $novaCategoria, $novoVolume, $novoValor, $novaQtde);
+        }
     }
 ?>
