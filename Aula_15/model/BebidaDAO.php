@@ -55,12 +55,24 @@ class BebidaDAO {
 
     public function atualizarBebida($nome, $novoNome, $novaCategoria, $novoVolume, $novoValor, $novaQtde) {
         if (isset($this->bebidas[$nome])) {
-            $this->bebidas[$nome]->setNome($novoNome);
-            $this->bebidas[$nome]->setCategoria($novaCategoria);
-            $this->bebidas[$nome]->setVolume($novoVolume);
-            $this->bebidas[$nome]->setValor($novoValor);
-            $this->bebidas[$nome]->setQtde($novaQtde);
+            // Se o nome mudou, precisamos mover o objeto para a nova chave do array
+            if ($novoNome !== $nome) {
+                $this->bebidas[$novoNome] = $this->bebidas[$nome];
+                unset($this->bebidas[$nome]);
+                $target = $this->bebidas[$novoNome];
+            } else {
+                $target = $this->bebidas[$nome];
+            }
+
+            // Forçar os tipos adequados antes de setar
+            $target->setNome((string) $novoNome);
+            $target->setCategoria((string) $novaCategoria);
+            $target->setVolume((float) $novoVolume);
+            $target->setValor((float) $novoValor);
+            $target->setQtde((int) $novaQtde);
         }
+
+        // Sempre salva o arquivo após alteração
         $this->salvarEmArquivo();
     }
 

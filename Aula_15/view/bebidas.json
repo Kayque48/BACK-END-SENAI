@@ -1,14 +1,14 @@
 {
-    "sim": {
-        "nome": "sim",
-        "categoria": "refrigerante",
+    "fad": {
+        "nome": "coca",
+        "categoria": "vinho",
         "volume": 0.01,
         "valor": -0.01,
         "qtde": -1
     },
-    "fad": {
-        "nome": "fad",
-        "categoria": "vinho",
+    "não": {
+        "nome": "não",
+        "categoria": "refrigerante",
         "volume": 0.01,
         "valor": -0.01,
         "qtde": -1
