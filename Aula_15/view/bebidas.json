@@ -1,16 +1,9 @@
 {
-    "sim": {
-        "nome": "sim",
-        "categoria": "na\u00b4p",
-        "volume": 0.14,
-        "valor": 12.13,
-        "qtde": 14
-    },
-    "\u00c1gua com G\u00e1s": {
-        "nome": "\u00c1gua com G\u00e1s",
+    "Guaraná": {
+        "nome": "Guaraná",
         "categoria": "agua",
-        "volume": 2.4,
-        "valor": 3.2,
-        "qtde": 2
+        "volume": 0.6,
+        "valor": 0,
+        "qtde": -31
     }
 }

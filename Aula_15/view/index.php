@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="UTf-8">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,9 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             text-align: center;
         }
 
-        main{
-            
-        }
+        /* main selector removed as it was empty */
     </style>
 </head>
 <body>
@@ -66,7 +64,50 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="number" name="qtde" required>
             <button type="submit">Cadastrar</button>
         </form>
+
+        <div class="ler">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Categoria</th>
+                        <th>Volume</th>
+                        <th>Valor</th>
+                        <th>Quantidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $bebidas = $controller->ler();
+                    foreach ($bebidas as $bebida) {
+                        echo "<tr>";
+                        echo "<td>{$bebida->getNome()}</td>";
+                        echo "<td>{$bebida->getCategoria()}</td>";
+                        echo "<td>{$bebida->getVolume()}</td>";
+                        echo "<td>{$bebida->getValor()}</td>";
+                        echo "<td>{$bebida->getQtde()}</td>";
+                        echo "<td>
+                                <form action=\"\" method=\"POST\" style=\"display:inline;\">
+                                    <input type=\"hidden\" name=\"acao\" value=\"deletar\">
+                                    <input type=\"hidden\" name=\"nome\" value=\"{$bebida->getNome()}\">
+                                    <button type=\"submit\">Deletar</button>
+                                </form>
+                              </td>";
+                        echo "</tr>";
+                    }
+                    ?>
+                    <form action="" method="POST">
+                     <input type="hidden" name="acao" value="deletar">
+                    </form>
+                <tbody>
+                </tbody>
+            </table>
     </main>
+</body>
+</html>
+
+
+    
 
    
 </body>

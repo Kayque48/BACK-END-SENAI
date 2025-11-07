@@ -41,7 +41,7 @@ class BebidaDAO {
             ];
         }
 
-        file_put_contents($this->arquivo, json_encode($dados, JSON_PRETTY_PRINT));
+        file_put_contents($this->arquivo, json_encode($dados, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
     }
 
     public function criarBebida(Bebidas $bebidas) {
