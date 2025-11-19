@@ -1,6 +1,6 @@
 <?php
 
-namespace Aula_16;
+namespace AVALIACAO_SOMATIVA;
 
 use PDO;
 use PDOException;
@@ -14,7 +14,7 @@ class Connection
         if (!self::$instance) {
             try {
                 $host = 'localhost';
-                $dbname = 'projeto_bebidas';
+                $dbname = 'livraria';
                 $user = 'root';
                 $pass = 'senaisp';
 
