@@ -1,8 +1,8 @@
 <?php
 
     namespace AVALIACAO_SOMATIVA;
-    require_once __DIR__ .'\model\LivrosDAO.php';
-    require_once __DIR__ . '\mode\Livros.php';
+    require_once __DIR__ .'/../model/LivrosDAO.php';
+    require_once __DIR__ . '/../model/Livros.php';
 
     class LivrosController {
         private $dao;

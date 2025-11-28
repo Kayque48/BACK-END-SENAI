@@ -1,9 +1,9 @@
 <?php
 
-namespace Aula_16;
+namespace AVALIACAO_SOMATIVA;
 
-require_once __DIR__ . '\..\controller\LivroController.php';
-$controller = new LivroController();
+require_once __DIR__ . '/../controller/LivrosController.php';
+$controller = new LivrosController();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $controller->excluir($_POST['titulo']);
 
     } elseif ($acao === 'editar') {
-        $controller->atualizar(
+        $controller->atualizarLivro(
             $_POST['titulo'],
             $_POST['novoTitulo'],
             $_POST['novoAutor'],
@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         echo "<td>{$livro->getAutor()}</td>";
                         echo "<td>{$livro->getAno()}</td>";
                         echo "<td>{$livro->getGenero()}</td>";
-                        echo "<td>{$livro->getQuantidade()}</td>";
+                        echo "<td>{$livro->getQntd()}</td>";
                         echo "<td>
                                 <button 
                                     onclick=\"abrirModal(
@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         '{$livro->getAutor()}',
                                         {$livro->getAno()},
                                         '{$livro->getGenero()}',
-                                        {$livro->getQuantidade()}
+                                        {$livro->getQntd()}
                                     )\" 
                                     class='btn-editar'>Editar</button>
 

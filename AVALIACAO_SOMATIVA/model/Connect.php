@@ -14,11 +14,11 @@ class Connection
         if (!self::$instance) {
             try {
                 $host = 'localhost';
-                $dbname = 'livraria';
+                $dbname = 'projeto_bebidas';
                 $user = 'root';
                 $pass = 'senaisp';
 
-                self::$instance = new PDO("mysql:host=$host; charset=utf8", $user, $pass);
+                self::$instance = new PDO("mysql:host=$host;charset=utf8", $user, $pass);
 
                 self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

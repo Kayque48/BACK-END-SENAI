@@ -12,7 +12,7 @@
 
         private $conn;
 
-        public function __construtc() {
+        public function __construct() {
             $this->conn = Connection::getInstance();
 
             $this->conn->exec("CREATE TABLE IF NOT EXISTS livros 
@@ -20,13 +20,12 @@
                 titulo VARCHAR(200),
                 autor VARCHAR(150),
                 ano INT,
-                genero VArCHAR(100),
+                genero VARCHAR(100),
                 quantidade INT
-            )"
-        );
-    }
+            )");
+        }
 
-    public function criarLivro(Livros $livros) {
+        public function criarLivro(Livros $livros) {
         $stmt = $this->conn->prepare(
             "
             insert into livros (titulo, autor, ano, genero, quantidade)
@@ -59,7 +58,7 @@
     public function atualizarLivros($originalTitulo, $novoTitulo, $autor, $ano, $genero, $qntd) {
         $stmt = $this->conn->prepare(
             "update livros
-            set titulo = :novotitulo, autor = :autor, ano = :ano, genero = :genero, quantidade = :quantidade
+            set titulo = :novoTitulo, autor = :autor, ano = :ano, genero = :genero, quantidade = :quantidade
             where titulo = :originalTitulo"
         );
         $stmt->execute([
@@ -73,8 +72,8 @@
     }
 
      public function excluirLivro($titulo) {
-        $stmt = $this->conn->prepare("DELETE FROM livro WHERE titulo = :titulo");
-        $stmt->execute([':nome' => $titulo]);
+        $stmt = $this->conn->prepare("DELETE FROM livros WHERE titulo = :titulo");
+        $stmt->execute([':titulo' => $titulo]);
     }
 
     public function buscarPorTitulo($titulo) {
